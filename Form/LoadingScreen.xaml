@@ -1,0 +1,16 @@
+﻿<Window x:Class="QuanLyTruyenTranh.Form.LoadingScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:control="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:QuanLyTruyenTranh.Form"
+        mc:Ignorable="d"
+        Title="LoadingScreen" Height="500" Width="500" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" Background="Teal" ResizeMode="NoResize">
+    <Grid>
+        <controls:ProgressRing IsActive="True" Foreground="#FFFBFCFC" VerticalAlignment="Center" HorizontalAlignment="Center" Height="100" Width="100"/>
+        <ProgressBar x:Name="progress" Visibility="Hidden" Maximum="100" Minimum="0" Value="0"/>
+    </Grid>
+</Window>

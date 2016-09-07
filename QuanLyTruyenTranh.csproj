@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A863736-8BE8-4A76-89F7-34C07ECBC2C9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuanLyTruyenTranh</RootNamespace>
+    <AssemblyName>QuanLyTruyenTranh</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Hopstarter-Book-Marvel-Book.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=8.8.2.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.8.8.2\lib\net40\Aspose.Cells.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ControlzEx, Version=2.1.0.0, Culture=neutral, PublicKeyToken=f08b075e934b7045, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.2.1.0-dev065\lib\net45\ControlzEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fluent, Version=4.0.3.394, Culture=neutral, PublicKeyToken=3e436e32a8c5546f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fluent.Ribbon.4.0.3.394\lib\net45\Fluent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.2.4.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.3-beta\lib\net45\MaterialDesignColors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.0.0.605, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.0.0-ci605\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Windows.11.0.3452\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Windows.11.0.3452\lib\net40\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Windows.11.0.3452\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Windows.11.0.3452\lib\net40\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.2\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Form\frmCapNhatTacGia.xaml.cs">
+      <DependentUpon>frmCapNhatTacGia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmCapNhatTheLoai.xaml.cs">
+      <DependentUpon>frmCapNhatTheLoai.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmDangNhap.xaml.cs">
+      <DependentUpon>frmDangNhap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmImportTruyenTranh.xaml.cs">
+      <DependentUpon>frmImportTruyenTranh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmThemTheLoai.xaml.cs">
+      <DependentUpon>frmThemTheLoai.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmThemTruyenTranh.xaml.cs">
+      <DependentUpon>frmThemTruyenTranh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\LoadingScreen.xaml.cs">
+      <DependentUpon>LoadingScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\AccountLogin.cs" />
+    <Compile Include="Helper\Converter\ImageConverter.cs" />
+    <Compile Include="Helper\Converter\PriceConverter.cs" />
+    <Compile Include="Helper\CTabItem.cs" />
+    <Compile Include="Form\frmThemKhachHang.xaml.cs">
+      <DependentUpon>frmThemKhachHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmThemNhaXuatBan.xaml.cs">
+      <DependentUpon>frmThemNhaXuatBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmThemTacGia.xaml.cs">
+      <DependentUpon>frmThemTacGia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Form\frmThemTaiKhoan.xaml.cs">
+      <DependentUpon>frmThemTaiKhoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Dialog\ConfirmationRequestor.cs" />
+    <Compile Include="Helper\Log\ILogger.cs" />
+    <Compile Include="Helper\Log\Logger.cs" />
+    <Compile Include="Helper\Paging\PagingCollectionView.cs" />
+    <Compile Include="Helper\Service\WindowService.cs" />
+    <Compile Include="Helper\UserNotificationMessage.cs" />
+    <Compile Include="Model\ChiTietDonHang.cs">
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ChiTietPhieuNhap.cs">
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DonHang.cs">
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GioHang.cs" />
+    <Compile Include="Model\KhachHang.cs">
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NHAXUATBAN.cs">
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PhanQuyen.cs">
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PhieuNhap.cs">
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TACGIA.cs">
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TaiKhoan.cs">
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\THELOAI.cs">
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TinhTrang.cs">
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TRUYENTRANH.cs">
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TruyenTranhModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TruyenTranhModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TruyenTranhModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TruyenTranhModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TruyenTranhModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TruyenTranhModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\Annotations1.cs" />
+    <Compile Include="Report\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UserControl\ucBanHang.xaml.cs">
+      <DependentUpon>ucBanHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucBaoCao.xaml.cs">
+      <DependentUpon>ucBaoCao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucButtonClose.xaml.cs">
+      <DependentUpon>ucButtonClose.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucDanhSachDonHang.xaml.cs">
+      <DependentUpon>ucDanhSachDonHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucDanhSachKhachHang.xaml.cs">
+      <DependentUpon>ucDanhSachKhachHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucDanhSachTaiKhoan.xaml.cs">
+      <DependentUpon>ucDanhSachTaiKhoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucDanhSachNhaXuatBan.xaml.cs">
+      <DependentUpon>ucDanhSachNhaXuatBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucDanhSachTacGia.xaml.cs">
+      <DependentUpon>ucDanhSachTacGia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucDanhSachTheLoai.xaml.cs">
+      <DependentUpon>ucDanhSachTheLoai.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucDanhSachTruyenTranh.xaml.cs">
+      <DependentUpon>ucDanhSachTruyenTranh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\GioHangViewModel.cs" />
+    <Compile Include="ViewModel\ChiTietDonHangViewModel.cs" />
+    <Compile Include="Model\ChiTietGioHang.cs" />
+    <Compile Include="ViewModel\DonHangViewModel.cs" />
+    <Compile Include="ViewModel\KhachHangViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\TaiKhoanViewModel.cs" />
+    <Compile Include="ViewModel\NhaXuatBanViewModel.cs" />
+    <Compile Include="ViewModel\PhanQuyenViewModel.cs" />
+    <Compile Include="ViewModel\TacGiaViewModel.cs" />
+    <Compile Include="ViewModel\TheLoaiViewModel.cs" />
+    <Compile Include="ViewModel\TruyenTranhDB.cs" />
+    <Compile Include="ViewModel\TruyenTranhExcelViewModel.cs" />
+    <Compile Include="ViewModel\TruyenTranhViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Page Include="Form\frmCapNhatTacGia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmCapNhatTheLoai.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmDangNhap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmImportTruyenTranh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmThemKhachHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmThemNhaXuatBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmThemTacGia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmThemTaiKhoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmThemTheLoai.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\frmThemTruyenTranh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Form\LoadingScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UserControl\ucBanHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\ucBaoCao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\ucButtonClose.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\ucDanhSachDonHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\ucDanhSachKhachHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\ucDanhSachTaiKhoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\ucDanhSachNhaXuatBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\ucDanhSachTacGia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\ucDanhSachTheLoai.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\ucDanhSachTruyenTranh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Report1.rdlc" />
+    <None Include="bin\Debug\Help\HelpQuanLyTruyenTranh.chm" />
+    <None Include="HelpQuanLyTruyenTranh.chm" />
+    <EntityDeploy Include="Model\TruyenTranhModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TruyenTranhModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Log4Net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Model\TruyenTranhModel.edmx.diagram">
+      <DependentUpon>TruyenTranhModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Report\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bin\Debug\Images\aivan-tutruyen1.u319.d20160430.t140636.jpg" />
+    <Resource Include="bin\Debug\Images\img120.u335.d20160429.t181210.jpg" />
+    <Resource Include="Images\autorship.png" />
+    <Resource Include="bin\Debug\Images\autorship.png" />
+    <Resource Include="Images\notebook.png" />
+    <Resource Include="bin\Debug\Images\d1.u335.d20160518.t094844.jpg" />
+    <Resource Include="Images\house.png" />
+    <Resource Include="Images\type.png" />
+    <Resource Include="Images\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\img122.u335.d20160429.t182126.jpg" />
+    <Resource Include="Images\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\t140556.jpg" />
+    <Resource Include="Images\diary_1.jpg" />
+    <Resource Include="Images\gone-girl_3.jpg" />
+    <Resource Include="Images\1q.u335.d20160408.t090820.jpg" />
+    <Resource Include="Images\runnner.u335.d20160404.t154539.jpg" />
+    <Resource Include="bin\Debug\Images\runnner.u335.d20160404.t154539.jpg" />
+    <Resource Include="bin\Debug\Images\img122.u335.d20160429.t182126.jpg" />
+    <Resource Include="bin\Debug\Images\1q.u335.d20160408.t090820.jpg" />
+    <Resource Include="bin\Debug\Images\diary_1.jpg" />
+    <Resource Include="bin\Debug\Images\error.png" />
+    <Resource Include="bin\Debug\Images\gone-girl_3.jpg" />
+    <Resource Include="bin\Debug\Images\help.png" />
+    <Resource Include="bin\Debug\Images\house.png" />
+    <Resource Include="bin\Debug\Images\notebook.png" />
+    <Resource Include="bin\Debug\Images\t140556.jpg" />
+    <Resource Include="bin\Debug\Images\type.png" />
+    <Resource Include="Images\anh-hung-4.u335.d20160520.t092234.jpg" />
+    <Resource Include="Images\j - thuyen truong cuop bien - gai tai nhu trai.u335.d20160527.t143402.jpg" />
+    <Resource Include="Images\mot moi tinh o dien elysee.u335.d20160527.t143541.jpg" />
+    <Resource Include="Images\anh-hung-4.u335.d20160520.t0922341.jpg" />
+    <Resource Include="Images\user.png" />
+    <Resource Include="bin\Debug\Images\user.png" />
+    <Resource Include="Images\cart.png" />
+    <Resource Include="bin\Debug\Images\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\msvcr100.dll">
+      <Link>SqlServerTypes\x64\msvcr100.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x64\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\msvcr100.dll">
+      <Link>SqlServerTypes\x86\msvcr100.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x86\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\report.png" />
+    <Resource Include="bin\Debug\Images\report.png" />
+    <Resource Include="Images\order_list.png" />
+    <Resource Include="bin\Debug\Images\order_list.png" />
+    <Resource Include="bin\Debug\Images\Hopstarter-Book-Marvel-Book.ico" />
+    <Resource Include="Images\Hopstarter-Book-Marvel-Book.ico" />
+    <Resource Include="Hopstarter-Book-Marvel-Book.ico" />
+    <Resource Include="bin\Debug\Images\8803602562016.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Resource Include="Images\login.png" />
+    <Resource Include="bin\Debug\Images\login.png" />
+    <Resource Include="bin\Debug\Images\login_form.png" />
+    <Resource Include="Images\login_form.png" />
+    <Resource Include="Images\nuoc my nhin tu ben trong.u335.d20160606.t145852.jpg" />
+    <Resource Include="bin\Debug\Images\nuoc my nhin tu ben trong.u335.d20160606.t145852.jpg" />
+    <Resource Include="bin\Debug\Images\backup.png" />
+    <Resource Include="Images\backup.png" />
+    <Resource Include="Images\restore.png" />
+    <Resource Include="bin\Debug\Images\restore.png" />
+    <Resource Include="bin\Debug\Images\log.png" />
+    <Resource Include="Images\log.png" />
+    <Content Include="Model\TruyenTranhModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TruyenTranhModel.edmx</DependentUpon>
+      <LastGenOutput>TruyenTranhModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\TruyenTranhModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TruyenTranhModel.edmx</DependentUpon>
+      <LastGenOutput>TruyenTranhModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="QuanLyTruyenTranh.UserControl.ucBanHang"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyTruyenTranh.UserControl"
+             xmlns:quanLyTruyenTranh="clr-namespace:QuanLyTruyenTranh.UserControl"
+             xmlns:helper="clr-namespace:QuanLyTruyenTranh.Helper.Converter"
+             mc:Ignorable="d" 
+             Width="Auto">
+    <Control.Resources>
+        <helper:ImageConverter x:Key="converter"/>
+        <helper:PriceConverter x:Key="priceConverter"/>
+    </Control.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0" Background="#fff">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Nhân viên bán hàng: " Grid.Column="0" Grid.Row="0"/>
+            <TextBox x:Name="txtNhanVienBanHang" Grid.Column="1" Grid.Row="0" Width="200" Focusable="False"/>
+            <Label Content="Khách hàng mua: " Grid.Column="2" Grid.Row="0"/>
+            <ComboBox x:Name="cbxKhachHang" Grid.Column="3" Grid.Row="0" Width="150"/>
+            <Label Grid.Row="0" Grid.Column="4" Content="Truyện tranh: "/>
+            <ComboBox x:Name="cbxTruyenTranh" Grid.Column="5" Grid.Row="0" Width="250" SelectionChanged="cbxTruyenTranh_SelectionChanged"/>
+            <Label Content="Số lượng: " Grid.Row="1" Grid.Column="0"/>
+            <TextBox x:Name="txtSoLuong" Grid.Column="1" Grid.Row="1" />
+            <Label Content="Giá: " Grid.Column="2" Grid.Row="1"/>
+            <TextBox x:Name="txtGia" Grid.Column="3" Grid.Row="1" Width="150" Focusable="False"/>
+            <Label Content="Tổng tiền: " Grid.Column="4" Grid.Row="1"/>
+            <TextBox Focusable="False" x:Name="txtTongTien" Grid.Column="5" Grid.Row="1" Width="250" HorizontalAlignment="Left"/>
+            <Label Content="Ngày đặt: " Grid.Column="0" Grid.Row="2" VerticalAlignment="Center"/>
+            <DatePicker x:Name="dpNgayDat" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+            <CheckBox x:Name="cbDaThanhToan" Grid.Row="2" Grid.Column="2" Content="Đã thanh toán" VerticalAlignment="Center"/>
+            <Button x:Name="btnThemGioHang" Width="150" Content="Thêm giỏ hàng" Margin="20,5,5,5" Background="#009688" BorderBrush="#009688" Foreground="#FFFFFF" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" Click="btnThemGioHang_Click"/>
+            <Button x:Name="btnXoaGioHang" Width="120" Content="Xóa giỏ hàng" Margin="5,5,5,5" Background="#009688" BorderBrush="#009688" Foreground="#FFFFFF" Grid.Row="2" Grid.Column="4" VerticalAlignment="Center" Click="btnXoaGioHang_Click"/>
+            <Button x:Name="btnThanhToan" Width="120" Content="Thanh toán" Margin="-115,5,5,5" Background="#009688" BorderBrush="#009688" Foreground="#FFFFFF" Grid.Row="2" Grid.Column="5" VerticalAlignment="Center" Click="btnThanhToan_Click"/>
+            <Label x:Name="lbSuccess" Foreground="#009688" Grid.Row="2" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Left" Width="116" Margin="130,8,0,8" Visibility="Hidden"/>
+        </Grid>
+
+        <Grid Margin="0,5,0,0" Grid.ColumnSpan="2" Grid.Row="1">
+            <DataGrid Height="Auto" Width="Auto" x:Name="dgBanHang" ItemsSource="{ Binding GioHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tên Truyện Tranh" Width="150*" Binding="{Binding ChiTietGioHang.TruyenTranh.TenTruyenTranh}"/>
+                    <DataGridTemplateColumn Header="Hình" Width="150*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ChiTietGioHang.TruyenTranh.AnhBia, Converter={ StaticResource converter }}" Width="100" Height="100" Stretch="Fill" HorizontalAlignment="Left"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Số Lượng" Width="100*" Binding="{Binding ChiTietGioHang.SoLuong}"/>
+                    <DataGridTextColumn Header="Đơn Giá" Width="100*" Binding="{Binding ChiTietGioHang.DonGia}"/>
+                    <DataGridTextColumn Header="Tổng Tiền" Width="100*" Binding="{Binding TongTien, Converter={ StaticResource priceConverter}}"/>
+                    <DataGridCheckBoxColumn Header="Đã Thanh Toán" Binding="{ Binding DaThanhToan}" Width="50*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>

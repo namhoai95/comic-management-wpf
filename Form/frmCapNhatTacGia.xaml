@@ -1,0 +1,41 @@
+﻿<Window x:Class="QuanLyTruyenTranh.Form.frmCapNhatTacGia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyTruyenTranh.Form"
+        mc:Ignorable="d"
+        Title="Cập Nhật Tác Giả" Height="188.855" Width="280" WindowStartupLocation="CenterScreen" Icon="../Images/autorship.png">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lbTen" Content="Tên tác giả:" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+        <TextBox x:Name="txtTenTacGia"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding HoTen,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Width="192" Grid.Column="1" Grid.Row="0"/>
+        <Label x:Name="lbMoTa" Content="Mô tả: " HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+        <TextBox x:Name="txtMoTa" HorizontalAlignment="Left" Height="39" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding MoTa,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Width="192" Grid.Column="1" Grid.Row="1"/>
+        <CheckBox x:Name="cbBiXoa" IsChecked="{Binding BiXoa, UpdateSourceTrigger=PropertyChanged}" Content="Bị xóa" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Margin="0,5,0,5"/>
+        <TextBlock x:Name="tbError" Text="{Binding MessageError}" Foreground="Red" Margin="5" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+        <Grid Grid.ColumnSpan="2" Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Width="Auto" x:Name="btnThemTacGia" Content="Lưu" Command="{Binding CapNhatCommand}" Background="#009688" BorderBrush="#009688" Foreground="#FFFFFF" Grid.Column="1"/>
+            <Button Width="Auto" x:Name="btnHuy" Content="Hủy" Grid.Column="2" Command="{Binding CloseFormCapNhatCommand}"  Background="#009688" BorderBrush="#009688" Foreground="#FFFFFF" Margin="10,0,0,0"/>
+        </Grid>
+    </Grid>
+</Window>

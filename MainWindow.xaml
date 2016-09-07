@@ -1,0 +1,68 @@
+﻿<fluent:RibbonWindow x:Class="QuanLyTruyenTranh.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyTruyenTranh"
+        xmlns:fluent="urn:fluent-ribbon"
+        mc:Ignorable="d"
+        Title="Quản Lý Truyện Tranh" Height="700" Width="1000" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="Images/notebook.png" Closed="RibbonWindow_Closed">
+    <Grid>
+        <Fluent:Ribbon x:Name="ribbon">
+            <Fluent:RibbonTabItem Header="Hệ Thống">
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Name="btnThoat" Header="Thoát" LargeIcon="Images/error.png" Click="btnThoat_Click"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Name="btnBackUp" Header="Sao Lưu" Click="btnBackUp_Click" LargeIcon="Images/backup.png"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Name="btnRestore" Header="Phục Hồi" Click="btnRestore_Click" LargeIcon="Images/restore.png"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Name="btnViewLog" Header="Xem Log" LargeIcon="Images/log.png" Click="btnViewLog_Click"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button x:Name="btnTroGiup" Header="Trợ Giúp" LargeIcon="Images/help.png" Click="btnTroGiup_Click"/>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Quản Lý" x:Name="rtiQuanLy">
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button x:Name="btnQuanLyTruyenTranh" Header="Truyện Tranh" Click="btnQuanLyTruyenTranh_Click" LargeIcon="Images\notebook.png"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button x:Name="btnQuanLyTacGia" Header="Tác Giả" Click="btnQuanLyTacGia_Click" LargeIcon="Images\autorship.png"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button x:Name="btnQuanLyNhaXuatBan" Header="Nhà Xuất Bản" Click="btnQuanLyNhaXuatBan_Click" LargeIcon="Images/house.png"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button x:Name="btnQuanLyTheLoai" Header="Thể Loại" Click="btnQuanLyTheLoai_Click" LargeIcon="Images/type.png"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button x:Name="btnQuanLyKhachHang" Header="Khách Hàng" LargeIcon="Images/user.png" Click="btnQuanLyKhachHang_Click"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button x:Name="btnQuanLyNhanVien" Header="Nhân Viên" LargeIcon="Images/user.png" Click="btnQuanLyNhanVien_Click"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button x:Name="btnBaoCao" Header="Báo Cáo" LargeIcon="Images/report.png" Click="btnBaoCao_Click"/>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Nhân Viên">
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button x:Name="btnDanhSachDonHang" Header="Danh Sách Đơn Hàng" LargeIcon="Images/order_list.png" Click="btnDanhSachDonHang_Click"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button x:Name="btnBanHang" Header="Bán Hàng" LargeIcon="Images/cart.png" Click="btnBanHang_Click"/>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+        </Fluent:Ribbon>
+        <DockPanel Height="600" LastChildFill="True" Margin="0,149,0,0" VerticalAlignment="Top" Width="auto" Name="dpanel" HorizontalAlignment="Left">
+            <TabControl Name="tbContent" >
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</fluent:RibbonWindow>
+

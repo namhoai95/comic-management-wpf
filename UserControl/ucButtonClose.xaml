@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="QuanLyTruyenTranh.UserControl.ucButtonClose"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyTruyenTranh.UserControl"
+             mc:Ignorable="d" 
+             Width="15" Height="15">
+    <Button Click="onClick" Background="#009688" BorderBrush="#009688">
+        <Path Data="M1,9 L9,1 M1,1 L9,9" Margin="-13,-10,1,9" Stroke="White" StrokeThickness="2" />
+    </Button>
+</UserControl>
